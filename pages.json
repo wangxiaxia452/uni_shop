@@ -12,6 +12,20 @@
 	{
 		"path" : "pages/my/my"
 	}],
+	"subPackages": [
+		{
+			"root": "subpkg",
+			"pages": [
+			{
+				"path" : "detail_goods/detail_goods"
+			},
+			{
+				"path" : "goods_list/goods_list"
+			}
+				
+			]
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "快乐购",
