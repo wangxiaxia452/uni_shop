@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<my-search @search="goToSearch"></my-search>
 		<view class='scroll-view-container'>
 			<scroll-view class="left-scroll-view" scroll-y="true" :style="{height:windowHeight+'px'}">
 				<!-- <block 	> -->
@@ -34,6 +35,7 @@
 </template>
 
 <script>
+	// import mySearch from '@/components/my-search/my-search.vue'
 	export default {
 		data() {
 			return {
@@ -47,7 +49,7 @@
 		onLoad() {
 			uni.getSystemInfo().then(res => {
 				const { windowHeight } = res
-				this.windowHeight = windowHeight
+				this.windowHeight = windowHeight - 50
 			})
 			this.getCateList()
 			
@@ -67,6 +69,11 @@
 			 navGoodsList(id) {
 				 uni.navigateTo({
 				 	url: '/subpkg/goods_list/goods_list?cid='+id
+				 })
+			 },
+			 goToSearch() {
+				 uni.navigateTo({
+				 	url: '/subpkg/search/search'
 				 })
 			 }
 			 
